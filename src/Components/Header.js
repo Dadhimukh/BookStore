@@ -13,19 +13,21 @@ import { Remove } from "../Redux/Actions/action";
 import { Add, individualRemove } from "../Redux/Actions/action";
 import { useNavigate } from "react-router-dom";
 
-
 function Header() {
   const [price, setPrice] = useState(0);
 
   const getdata = useSelector((state) => state.cartreducer.carts);
   // console.log(getdata);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const clickHandel = () => {
-      navigate("/checkout");
-    };
+  const clickHandel = () => {
+    navigate("/checkout");
+  };
 
+  const bookDetailsHandel = () => {
+    navigate("/bookDetails");
+  };
 
   const send = (e) => {
     dispatch(Add(e));
@@ -91,9 +93,22 @@ function Header() {
                 textDecoration: "none",
                 fontSize: "20px",
                 marginLeft: "10px",
+                paddingLeft: "50px",
               }}
             >
               Home
+            </NavLink>
+            <NavLink
+              to="/bookDetails"
+              className="text-light"
+              style={{
+                textDecoration: "none",
+                fontSize: "20px",
+                marginLeft: "10px",
+                paddingLeft: "50px",
+              }}
+            >
+              Book Details
             </NavLink>
           </Nav>
           <Badge
