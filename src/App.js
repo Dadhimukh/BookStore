@@ -4,6 +4,7 @@ import Cards from './Components/Card';
 import CardDetail from './Components/CardDetail';
 import Checkout from "./Components/Checkout";
 import Header from './Components/Header';
+import BookDetails from "./Components/BookDetails"
 import { Routes,Route } from 'react-router-dom';
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Cards />}></Route>
         <Route path="/cart/:id" element={<CardDetail />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/bookDetails" element={<BookDetails />}></Route>
       </Routes>
     </>
   );
