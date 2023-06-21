@@ -11,12 +11,21 @@ import Menu from "@mui/material/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { Remove } from "../Redux/Actions/action";
 import { Add, individualRemove } from "../Redux/Actions/action";
+import { useNavigate } from "react-router-dom";
+
 
 function Header() {
   const [price, setPrice] = useState(0);
 
   const getdata = useSelector((state) => state.cartreducer.carts);
-  console.log(getdata);
+  // console.log(getdata);
+
+    const navigate = useNavigate();
+
+    const clickHandel = () => {
+      navigate("/checkout");
+    };
+
 
   const send = (e) => {
     dispatch(Add(e));
@@ -186,9 +195,9 @@ function Header() {
                     <strong>Total:</strong> ₹ {price}
                   </p>
                   <td>
-                    <button>Checkout</button>
+                    <button onClick={clickHandel}>Checkout</button>
                   </td>
-                 </tbody>
+                </tbody>
               </Table>
             </div>
           ) : (
